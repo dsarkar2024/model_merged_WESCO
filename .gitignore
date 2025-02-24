@@ -1,0 +1,4 @@
+data_WESCO/cache
+data_WESCO/fixed_readings
+!data_WESCO/cache/WESCO_config.json
+!data_WESCO/cache/walls.txt
