@@ -181,7 +181,19 @@ def load_dataset(dataset_dir, batch_size, test_batch_size=None, **kwargs):
         cat_data = np.load(os.path.join(dataset_dir, category + '.npz'))
         data['x_' + category] = cat_data['x']
         data['y_' + category] = cat_data['y']
+    
+    #Debugging
+    print("Unique values in x_train before standardization:", np.unique(data['x_train'][..., 0]))
+
+
+
     scaler = StandardScaler(mean=data['x_train'][..., 0].mean(), std=data['x_train'][..., 0].std())
+    # Debugging: Check if mean and std are valid
+    print(f"Scaler Mean: {scaler.mean}, Scaler Std: {scaler.std}")
+    if scaler.std == 0:
+        print("Warning: Standard deviation is zero! This will cause division by zero in transform().")
+
+
     # Data format
     for category in ['train', 'val', 'test']:
         data['x_' + category][..., 0] = scaler.transform(data['x_' + category][..., 0])

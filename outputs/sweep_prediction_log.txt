@@ -1,0 +1,5 @@
+2025-03-09 23:04:59,840 - INFO - Log directory: GNN_model/logs/dcrnn_DR_2_h_1_64-64-64_lr_0.001_bs_32_0309230459/
+Unique values in x_train before standardization: [ 0.  1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12. 13. 14. 15. 16. 17.
+ 18. 19. 20. 21. 22. 23.]
+Scaler Mean: 11.66557788848877, Scaler Std: 6.783238410949707
+2025-03-09 23:05:01,608 - INFO - Model created
